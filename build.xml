@@ -1,0 +1,16 @@
+<project name="reladomo" default="all" xmlns:jacoco="antlib:org.jacoco.ant" basedir=".">
+    <property name="reladomo.version" value="16.1.3"/>
+    <path id="reladomogen.classpath">
+        <pathelement location="${basedir}/project/lib_managed/bundles/com.goldmansachs.reladomo/reladomogen/reladomogen-${reladomo.version}.jar"/>
+        <pathelement location="${basedir}/project/lib_managed/bundles/com.goldmansachs.reladomo/reladomo-gen-util/reladomo-gen-util-${reladomo.version}.jar"/>
+    </path>
+    <target name="generate-reladomo-classes">
+        <taskdef name="reladomo-gen" classname="com.gs.fw.common.mithra.generator.MithraGenerator" loaderRef="mithraGenerator">
+            <classpath refid="reladomogen.classpath"/>
+        </taskdef>
+        <reladomo-gen xml="${basedir}/src/main/resources/reladomo/models/ReladomoClassList.xml"
+                      generatedDir="${basedir}/generated-src"
+                      nonGeneratedDir="${basedir}/src/main/java"
+                      generateConcreteClasses="true"/>
+    </target>
+</project>

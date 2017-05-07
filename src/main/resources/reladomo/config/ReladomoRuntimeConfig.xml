@@ -1,0 +1,6 @@
+<MithraRuntime>
+    <ConnectionManager className="example.util.MariaDbConnectionManager">
+        <MithraObjectConfiguration cacheType="none" className="sample.domain.ObjectSequence"/>
+        <MithraObjectConfiguration className="sample.domain.Person" cacheType="partial"/>
+    </ConnectionManager>
+</MithraRuntime>
