@@ -9,7 +9,7 @@
             <classpath refid="reladomogen.classpath"/>
         </taskdef>
         <reladomo-gen xml="${basedir}/src/main/resources/reladomo/models/ReladomoClassList.xml"
-                      generatedDir="${basedir}/generated-src"
+                      generatedDir="${basedir}/target/generated-src"
                       nonGeneratedDir="${basedir}/src/main/java"
                       generateConcreteClasses="true"/>
     </target>

@@ -1,4 +1,6 @@
 package example.domain;
+import com.gs.fw.common.mithra.MithraSequence;
+
 import java.sql.Timestamp;
 /********************************************************************************
 * File        : $Source:  $
@@ -7,7 +9,7 @@ import java.sql.Timestamp;
 * Modified by : $Author:  $
 *******************************************************************************
 */
-public class ObjectSequence extends ObjectSequenceAbstract
+public class ObjectSequence extends ObjectSequenceAbstract implements MithraSequence
 {
 	public ObjectSequence()
 	{
