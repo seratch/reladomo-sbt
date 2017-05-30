@@ -14,7 +14,8 @@ lazy val root = (project in file(".")).
     name := "Hello",
     libraryDependencies ++= Seq(
       "com.goldmansachs.reladomo" % "reladomo" % "16.1.3",
-      "org.mariadb.jdbc" % "mariadb-java-client" % "1.5.9"
+      "org.mariadb.jdbc" % "mariadb-java-client" % "1.5.9",
+      "org.scalatest" %% "scalatest" % "3.0.1" % "test"
     )
 )
 
