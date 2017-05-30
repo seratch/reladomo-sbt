@@ -8,13 +8,14 @@ lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
       organization := "com.example",
-      scalaVersion := "2.12.1",
+      scalaVersion := "2.12.2",
       version      := "0.1.0-SNAPSHOT"
     )),
     name := "Hello",
     libraryDependencies ++= Seq(
       "com.goldmansachs.reladomo" % "reladomo" % "16.1.3",
-      "org.mariadb.jdbc" % "mariadb-java-client" % "1.5.9"
+      "org.mariadb.jdbc" % "mariadb-java-client" % "1.5.9",
+      "org.scalatest" %% "scalatest" % "3.0.1" % "test"
     )
 )
 
