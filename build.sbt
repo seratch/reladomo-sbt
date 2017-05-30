@@ -4,6 +4,8 @@ import Dependencies._
 
 lazy val hello = taskKey[Unit]("Hello task")
 
+resolvers += "Typesafe Repositiory" at "http://repo.typesafe.com/typesafe/releases/"
+
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
@@ -13,6 +15,7 @@ lazy val root = (project in file(".")).
     )),
     name := "Hello",
     libraryDependencies ++= Seq(
+      "com.github.pathikrit" %% "better-files" % "3.0.0",
       "com.goldmansachs.reladomo" % "reladomo" % "16.1.3",
       "org.mariadb.jdbc" % "mariadb-java-client" % "1.5.9",
       "org.scalatest" %% "scalatest" % "3.0.1" % "test"
