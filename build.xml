@@ -5,6 +5,23 @@
         <pathelement location="${basedir}/project/lib_managed/bundles/com.goldmansachs.reladomo/reladomogen/reladomogen-${reladomo.version}.jar"/>
         <pathelement location="${basedir}/project/lib_managed/bundles/com.goldmansachs.reladomo/reladomo-gen-util/reladomo-gen-util-${reladomo.version}.jar"/>
     </path>
+
+    <target name="generate-reladomo-common">
+        <taskdef name="reladomo-gen" classname="com.gs.fw.common.mithra.generator.MithraGenerator" loaderRef="reladomoGenerator">
+            <classpath refid="reladomogen.classpath"/>
+        </taskdef>
+        <reladomo-gen xml="${basedir}/src/main/resources/reladomo/common/ReladomoClassList.xml"
+                      generatedDir="${basedir}/target/generated-src"
+                      nonGeneratedDir="${basedir}/src/main/java"
+                      generateConcreteClasses="true"/>
+        <taskdef name="ddl-gen" classname="com.gs.fw.common.mithra.generator.dbgenerator.MithraDbDefinitionGenerator" loaderRef="ddlGenerator">
+            <classpath refid="reladomogen.classpath"/>
+        </taskdef>
+        <ddl-gen xml="${basedir}/src/main/resources/reladomo/common/ReladomoClassList.xml"
+                 generatedDir="${basedir}/target/generated-db/ddl"
+                 databaseType="postgres"/>
+    </target>
+
     <target name="generate-reladomo-classes">
         <taskdef name="reladomo-gen" classname="com.gs.fw.common.mithra.generator.MithraGenerator" loaderRef="reladomoGenerator">
             <classpath refid="reladomogen.classpath"/>
